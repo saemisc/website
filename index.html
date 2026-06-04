@@ -13,7 +13,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #e8d5c4;
+      --bg: #dfc9ae;
       --ink: #1e120a;
       --muted: #9c7c68;
       --rule: rgba(0,0,0,0.1);
@@ -120,15 +120,20 @@
     .listen-links a:first-child { border-top: 1px solid var(--rule); }
 
     .listen-links a::after {
-      content: '↗';
+      content: '';
       font-family: 'Space Grotesk', sans-serif;
       font-size: 0.8rem;
       color: var(--muted);
       transition: transform 0.2s, color 0.2s;
     }
 
-    .listen-links a:hover { letter-spacing: 0.08em; }
-    .listen-links a:hover::after { transform: translate(2px,-2px); color: var(--ink); }
+    .listen-links a .arrow {
+      font-size: 0.75rem;
+      color: var(--muted);
+      transition: transform 0.2s, color 0.2s;
+    }
+
+    .listen-links a:hover .arrow { transform: translate(2px,-2px); color: var(--ink); }
 
     .embed-wrap { overflow: hidden; }
 
@@ -240,9 +245,9 @@
   <section class="s1">
     <div class="section-tag">listen</div>
     <div class="listen-links">
-      <a href="https://open.spotify.com/playlist/0Wk9LYnX9WPAHEaLfjW1xq?si=871a38803c6a43c3" target="_blank" rel="noopener">spotify</a>
-      <a href="https://music.apple.com/us/playlist/seth-earnest-mixing-discog/pl.u-ZmblVXJiR97eJ" target="_blank" rel="noopener">apple music</a>
-      <a href="https://tidal.com/playlist/8fd9a9f3-d87f-4363-aac8-f41829d6cebc" target="_blank" rel="noopener">tidal</a>
+      <a href="https://open.spotify.com/playlist/0Wk9LYnX9WPAHEaLfjW1xq?si=871a38803c6a43c3" target="_blank" rel="noopener">spotify <i class="fa-solid fa-arrow-up-right arrow"></i></a>
+      <a href="https://music.apple.com/us/playlist/seth-earnest-mixing-discog/pl.u-ZmblVXJiR97eJ" target="_blank" rel="noopener">apple music <i class="fa-solid fa-arrow-up-right arrow"></i></a>
+      <a href="https://tidal.com/playlist/8fd9a9f3-d87f-4363-aac8-f41829d6cebc" target="_blank" rel="noopener">tidal <i class="fa-solid fa-arrow-up-right arrow"></i></a>
     </div>
     <div class="embed-wrap">
       <iframe
