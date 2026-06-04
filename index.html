@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="mix engineer. nashville, tn." />
+  <title>seth earnest – mix engineer – nashville, tn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #1c1916;
+      --ink: #f0ece4;
+      --muted: #6b6560;
+      --rule: rgba(255,255,255,0.08);
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    .wrap {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 40px 0 0;
+      opacity: 0;
+      animation: appear 0.8s 0.1s ease forwards;
+    }
+
+    .wordmark {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      text-decoration: none;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .hero {
+      padding: 88px 0 96px;
+      opacity: 0;
+      animation: appear 1s 0.25s ease forwards;
+    }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 11vw, 7.2rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+    }
+
+    section {
+      border-top: 1px solid var(--rule);
+      padding: 64px 0;
+      opacity: 0;
+    }
+
+    section.s1 { animation: appear 0.9s 0.4s ease forwards; }
+    section.s2 { animation: appear 0.9s 0.55s ease forwards; }
+    section.s3 { animation: appear 0.9s 0.7s ease forwards; }
+
+    .section-tag {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .listen-links {
+      margin-bottom: 36px;
+    }
+
+    .listen-links a {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      color: var(--ink);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: letter-spacing 0.2s;
+    }
+
+    .listen-links a:first-child { border-top: 1px solid var(--rule); }
+
+    .listen-links a::after {
+      content: '↗';
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      color: var(--muted);
+      transition: transform 0.2s, color 0.2s;
+    }
+
+    .listen-links a:hover { letter-spacing: 0.08em; }
+    .listen-links a:hover::after { transform: translate(2px,-2px); color: var(--ink); }
+
+    .embed-wrap { overflow: hidden; }
+
+    .about-role {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .about-body {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--ink);
+      max-width: 520px;
+    }
+
+    .about-body p + p { margin-top: 1.1em; }
+
+    .about-body .clients {
+      color: var(--muted);
+      font-size: 0.76rem;
+    }
+
+    .about-body .personal {
+      color: var(--muted);
+      font-size: 0.76rem;
+    }
+
+    .contact-links a {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      color: var(--ink);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: letter-spacing 0.2s;
+    }
+
+    .contact-links a:first-child { border-top: 1px solid var(--rule); }
+    .contact-links a:hover { letter-spacing: 0.08em; }
+
+    .location {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-top: 20px;
+    }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 24px 0 44px;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      opacity: 0;
+      animation: appear 0.8s 0.85s ease forwards;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover { color: var(--ink); }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { padding: 0 20px; }
+      nav { padding-top: 26px; }
+      .hero { padding: 64px 0 72px; }
+      section { padding: 48px 0; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a class="wordmark" href="/">seth earnest</a>
+    <ul class="nav-links">
+      <li><a href="https://www.instagram.com/sethearnest/" target="_blank" rel="noopener">instagram</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <h1>Mixing for Artists. Films. Games.</h1>
+  </div>
+
+  <section class="s1">
+    <div class="section-tag">listen</div>
+    <div class="listen-links">
+      <a href="https://open.spotify.com/playlist/0Wk9LYnX9WPAHEaLfjW1xq?si=871a38803c6a43c3" target="_blank" rel="noopener">spotify</a>
+      <a href="https://music.apple.com/us/playlist/seth-earnest-mixing-discog/pl.u-kv9lbyLCWXXL8A" target="_blank" rel="noopener">apple music</a>
+      <a href="https://tidal.com/browse/playlist/d7709238-8364-411a-b648-389e587f2038" target="_blank" rel="noopener">tidal</a>
+    </div>
+    <div class="embed-wrap">
+      <iframe
+        src="https://open.spotify.com/embed/playlist/0Wk9LYnX9WPAHEaLfjW1xq?utm_source=generator&theme=0"
+        width="100%"
+        height="352"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <section class="s2">
+    <div class="section-tag">about</div>
+    <div class="about-body">
+      <p>Mix engineer. Producer. Composer. Musician.</p>
+      <p>Almost a billion streams. Years on the road. Feature films, TV, and game studios. I've been in most rooms this industry has, and it's made me a better collaborator at the mix stage.</p>
+      <p class="clients">Artists, labels & companies I've worked with include Tessa Violet, Walker Hayes, Cobra Starship, Sony Games, Disney, Google, Fueled By Ramen, Broken Bow Records, and dozens of others.</p>
+      <p class="personal">Married to Christina. Dog named Indie. I roast my own coffee and watch a lot of 80s movies.</p>
+    </div>
+  </section>
+
+  <section class="s3">
+    <div class="section-tag">get in touch</div>
+    <div class="contact-links">
+      <a href="mailto:earnestmix@gmail.com">earnestmix@gmail.com</a>
+      <a href="tel:+16156699007">(615) 669-9007</a>
+    </div>
+    <p class="location">nashville, tn</p>
+  </section>
+
+  <footer>
+    <span>© 2025 seth earnest</span>
+    <a href="https://www.instagram.com/sethearnest/" target="_blank" rel="noopener">instagram</a>
+  </footer>
+
+</div>
+</body>
+</html>
