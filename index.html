@@ -120,15 +120,17 @@
     .listen-links a:first-child { border-top: 1px solid var(--rule); }
 
     .listen-links a::after {
-      content: '↗';
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.8rem;
+      content: '';
+    }
+
+    .listen-links a .arrow {
+      font-size: 0.75rem;
       color: var(--muted);
       transition: transform 0.2s, color 0.2s;
     }
 
     .listen-links a:hover { letter-spacing: 0.08em; }
-    .listen-links a:hover::after { transform: translate(2px,-2px); color: var(--ink); }
+    .listen-links a:hover .arrow { transform: translate(2px,-2px); color: var(--ink); }
 
     .embed-wrap { overflow: hidden; }
 
@@ -240,9 +242,9 @@
   <section class="s1">
     <div class="section-tag">listen</div>
     <div class="listen-links">
-      <a href="https://open.spotify.com/playlist/0Wk9LYnX9WPAHEaLfjW1xq?si=871a38803c6a43c3" target="_blank" rel="noopener">Spotify</a>
-      <a href="https://music.apple.com/us/playlist/seth-earnest-mixing-discog/pl.u-ZmblVXJiR97eJ" target="_blank" rel="noopener">Apple Music</a>
-      <a href="https://tidal.com/playlist/8fd9a9f3-d87f-4363-aac8-f41829d6cebc" target="_blank" rel="noopener">Tidal</a>
+      <a href="https://open.spotify.com/playlist/0Wk9LYnX9WPAHEaLfjW1xq?si=871a38803c6a43c3" target="_blank" rel="noopener">Spotify <i class="fa-solid fa-arrow-up-right arrow"></i></a>
+      <a href="https://music.apple.com/us/playlist/seth-earnest-mixing-discog/pl.u-ZmblVXJiR97eJ" target="_blank" rel="noopener">Apple Music <i class="fa-solid fa-arrow-up-right arrow"></i></a>
+      <a href="https://tidal.com/playlist/8fd9a9f3-d87f-4363-aac8-f41829d6cebc" target="_blank" rel="noopener">Tidal <i class="fa-solid fa-arrow-up-right arrow"></i></a>
     </div>
     <div class="embed-wrap">
       <iframe
@@ -273,13 +275,12 @@
   </div>
   
   <section class="s3">
-    <div class="section-tag">Get in touch!</div>
+    <div class="section-tag">Get in touch</div>
     <div class="contact-links">
       <a href="mailto:earnestmix@gmail.com">earnestmix@gmail.com</a>
       <a href="tel:+16156699007">(615) 669-9007</a>
-      <a href="https://www.instagram.com/sethearnest/" target="_blank" rel="noopener">Instagram<i class="fa-brands fa-instagram" style="font-size:3rem;"></i></a>
+      <a href="https://www.instagram.com/sethearnest/" target="_blank" rel="noopener">Instagram <i class="fa-brands fa-instagram" style="font-size:2rem;"></i></a>
     </div>
-    <p class="location">Nashville, TN</p>
   </section>
 
   <footer>
