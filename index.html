@@ -100,7 +100,7 @@
     }
 
     .listen-links {
-      margin-bottom: 36px;
+      margin-bottom: 0;
     }
 
     .listen-links a {
@@ -110,12 +110,14 @@
       text-decoration: none;
       color: var(--ink);
       padding: 10px 0;
-      border-bottom: 1px solid var(--rule);
+      border-bottom: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
       transition: letter-spacing 0.2s;
     }
+
+    .listen-links a + a { border-top: 1px solid var(--rule); }
 
     .listen-links a:first-child { border-top: 1px solid var(--rule); }
 
