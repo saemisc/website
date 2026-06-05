@@ -7,7 +7,7 @@
   <title>seth earnest – mix engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Space+Grotesk:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -43,7 +43,7 @@
     }
 
     .wordmark {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Alfa Slab One', serif;
       font-size: 1.5rem;
       letter-spacing: 0.06em;
       text-decoration: none;
@@ -75,7 +75,7 @@
     }
 
     .hero h1 {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Alfa Slab One', serif;
       font-size: clamp(4rem, 11vw, 7.2rem);
       line-height: 0.95;
       letter-spacing: 0.02em;
@@ -92,7 +92,7 @@
     section.s3 { animation: appear 0.9s 0.7s ease forwards; }
 
     .section-tag {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Alfa Slab One', serif;
       font-size: 1.4rem;
       letter-spacing: 0.14em;
       color: var(--muted);
@@ -104,7 +104,7 @@
     }
 
     .listen-links a {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Alfa Slab One', serif;
       font-size: clamp(1.8rem, 4.5vw, 2.6rem);
       letter-spacing: 0.04em;
       text-decoration: none;
@@ -120,20 +120,15 @@
     .listen-links a:first-child { border-top: 1px solid var(--rule); }
 
     .listen-links a::after {
-      content: '';
+      content: '↗';
       font-family: 'Space Grotesk', sans-serif;
       font-size: 0.8rem;
       color: var(--muted);
       transition: transform 0.2s, color 0.2s;
     }
 
-    .listen-links a .arrow {
-      font-size: 0.75rem;
-      color: var(--muted);
-      transition: transform 0.2s, color 0.2s;
-    }
-
-    .listen-links a:hover .arrow { transform: translate(2px,-2px); color: var(--ink); }
+    .listen-links a:hover { letter-spacing: 0.08em; }
+    .listen-links a:hover::after { transform: translate(2px,-2px); color: var(--ink); }
 
     .embed-wrap { overflow: hidden; }
 
@@ -148,7 +143,7 @@
 
     .about-body {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.82rem;
       font-weight: 300;
       line-height: 1.9;
       color: var(--ink);
@@ -159,16 +154,16 @@
 
     .about-body .clients {
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.76rem;
     }
 
     .about-body .personal {
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.76rem;
     }
 
     .contact-links a {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Alfa Slab One', serif;
       font-size: clamp(1.8rem, 4.5vw, 2.6rem);
       letter-spacing: 0.04em;
       text-decoration: none;
@@ -245,9 +240,9 @@
   <section class="s1">
     <div class="section-tag">listen</div>
     <div class="listen-links">
-      <a href="https://open.spotify.com/playlist/0Wk9LYnX9WPAHEaLfjW1xq?si=871a38803c6a43c3" target="_blank" rel="noopener">spotify <i class="fa-solid fa-arrow-up-right arrow"></i></a>
-      <a href="https://music.apple.com/us/playlist/seth-earnest-mixing-discog/pl.u-ZmblVXJiR97eJ" target="_blank" rel="noopener">apple music <i class="fa-solid fa-arrow-up-right arrow"></i></a>
-      <a href="https://tidal.com/playlist/8fd9a9f3-d87f-4363-aac8-f41829d6cebc" target="_blank" rel="noopener">tidal <i class="fa-solid fa-arrow-up-right arrow"></i></a>
+      <a href="https://open.spotify.com/playlist/0Wk9LYnX9WPAHEaLfjW1xq?si=871a38803c6a43c3" target="_blank" rel="noopener">spotify</a>
+      <a href="https://music.apple.com/us/playlist/seth-earnest-mixing-discog/pl.u-ZmblVXJiR97eJ" target="_blank" rel="noopener">apple music</a>
+      <a href="https://tidal.com/playlist/8fd9a9f3-d87f-4363-aac8-f41829d6cebc" target="_blank" rel="noopener">tidal</a>
     </div>
     <div class="embed-wrap">
       <iframe
@@ -268,7 +263,7 @@
     <div class="about-body">
       <p>Mix engineer. Producer. Composer. Musician.</p>
       <p>Almost a billion streams. Years on the road and in studios as a musician. Feature films, TV, and game studios. I've been in most rooms this industry has, and it's made me a better collaborator at the mix stage.</p>
-      <p class="clients">Artists, labels & companies I've worked with include Tessa Violet, Walker Hayes, Cobra Starship, Canaan Smith, Matt Stell, Sony, Disney, Google, Fueled By Ramen, Broken Bow Records, New West Records, TAG, and dozens of others.</p>
+      <p class="clients">Artists, labels & companies I've worked with include Tessa Violet, Walker Hayes, Cobra Starship, Canaan Smith, Matt Stell, Sony, Disney, Google, Fueled By Ramen, Broken Bow Records, and dozens of others.</p>
       <p class="personal">Married to Christina. Have a dog named Indie. I roast my own coffee and watch a lot of 80s movies.</p>
     </div>
   </section>
@@ -283,7 +278,7 @@
   </section>
 
   <footer>
-    <span>© 2026 SETH EARNEST</span>
+    <span>© 2026 seth earnest</span>
     <a href="https://www.instagram.com/sethearnest/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" style="font-size:1.6rem;"></i></a>
   </footer>
 
