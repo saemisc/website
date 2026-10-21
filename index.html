@@ -3,30 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="mix engineer. nashville, tn." />
   <title>seth earnest – mix engineer</title>
-  <meta name="description" content="Nashville mix engineer for artists, film, and games. Almost a billion streams. Get in touch about your next project." />
-
-  <!-- Link previews (texts, social posts, Slack, etc.) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="seth earnest – mix engineer" />
-  <meta property="og:description" content="Mixing for artists, films, and games. Nashville, TN." />
-  <meta property="og:url" content="https://seth-earnest.com/" />
-  <!-- Once you've added a 1200x630 image named og.jpg to the repo, uncomment these two lines:
-  <meta property="og:image" content="https://seth-earnest.com/og.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  -->
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Space+Grotesk:wght@300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Space+Grotesk:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --bg: #dfc9ae;
       --ink: #1e120a;
-      --muted: #6b4f3d; /* darkened from #9c7c68 for readable contrast (about 4.7:1) */
+      --muted: #9c7c68;
       --rule: rgba(0,0,0,0.1);
     }
 
@@ -68,22 +57,16 @@
     }
 
     .nav-links a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      text-decoration: none;
       color: var(--muted);
       transition: color 0.2s;
     }
 
     .nav-links a:hover { color: var(--ink); }
-
-    .icon {
-      display: block;
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-
-    .icon-lg {
-      width: 2rem;
-      height: 2rem;
-    }
 
     .hero {
       padding: 88px 0 96px;
@@ -91,14 +74,11 @@
       animation: appear 1s 0.25s ease forwards;
     }
 
-    .hero h1,
-    .hero h2 {
+    .hero h1 {
       font-family: 'Alfa Slab One', serif;
-      font-weight: 400;
-      font-size: clamp(3rem, 11vw, 7.2rem);
+      font-size: clamp(4rem, 11vw, 7.2rem);
       line-height: 0.95;
       letter-spacing: 0.02em;
-      overflow-wrap: anywhere;
     }
 
     section {
@@ -112,15 +92,17 @@
 
     .section-tag {
       font-family: 'Alfa Slab One', serif;
-      font-weight: 400;
       font-size: 1.4rem;
       letter-spacing: 0.14em;
       color: var(--muted);
       margin-bottom: 28px;
     }
 
-    .listen-links a,
-    .contact-links a {
+    .listen-links {
+      margin-bottom: 0;
+    }
+
+    .listen-links a {
       font-family: 'Alfa Slab One', serif;
       font-size: clamp(1.8rem, 4.5vw, 2.6rem);
       letter-spacing: 0.04em;
@@ -131,28 +113,33 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      overflow-wrap: anywhere;
       transition: letter-spacing 0.2s;
     }
 
+    .listen-links a:first-child { }
+
+    .listen-links a::after {
+      content: '';
+    }
+
     .listen-links a .arrow {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1rem;
+      font-size: 0.75rem;
       color: var(--muted);
       transition: transform 0.2s, color 0.2s;
     }
 
-    .listen-links a:hover,
-    .contact-links a:hover { letter-spacing: 0.08em; }
+    .listen-links a:hover { letter-spacing: 0.08em; }
     .listen-links a:hover .arrow { transform: translate(2px,-2px); color: var(--ink); }
 
-    .portrait {
-      display: block;
-      width: 100%;
-      max-width: 280px;
-      height: auto;
-      margin-bottom: 32px;
-      filter: grayscale(20%);
+    .embed-wrap { overflow: hidden; }
+
+    .about-role {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 24px;
     }
 
     .about-body {
@@ -166,15 +153,40 @@
 
     .about-body p + p { margin-top: 1.1em; }
 
-    .about-body .clients,
-    .about-body .personal {
+    .about-body .clients {
       color: var(--muted);
+      font-size: 0.9rem;
     }
 
-    .divider {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin: 0;
+    .about-body .personal {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .contact-links a {
+      font-family: 'Alfa Slab One', serif;
+      font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      color: var(--ink);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: letter-spacing 0.2s;
+    }
+
+    .contact-links a:first-child { }
+    .contact-links a:hover { letter-spacing: 0.08em; }
+
+    .location {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-top: 20px;
     }
 
     footer {
@@ -190,19 +202,17 @@
       animation: appear 0.8s 0.85s ease forwards;
     }
 
-    a:focus-visible {
-      outline: 2px solid var(--ink);
-      outline-offset: 4px;
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
     }
+
+    footer a:hover { color: var(--ink); }
 
     @keyframes appear {
       from { opacity: 0; transform: translateY(10px); }
       to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      nav, .hero, section, footer { animation: none; opacity: 1; }
-      html { scroll-behavior: auto; }
     }
 
     @media (max-width: 560px) {
@@ -219,59 +229,48 @@
   <nav>
     <a class="wordmark" href="/">seth earnest</a>
     <ul class="nav-links">
-      <li>
-        <a href="https://www.instagram.com/sethearnest/" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
-        </a>
-      </li>
+      <li><a href="https://www.instagram.com/sethearnest/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" style="font-size:1.5rem;"></i></a></li>
     </ul>
   </nav>
 
-  <main>
+  <div class="hero">
+    <h1>Mixing for Artists. Films. Games.</h1>
+  </div>
 
-    <div class="hero">
-      <h1>Mixing for Artists. Films. Games.</h1>
+  <section class="s1">
+    <div class="section-tag">listen</div>
+    <div class="listen-links">
+      <a href="https://open.spotify.com/playlist/0Wk9LYnX9WPAHEaLfjW1xq?si=871a38803c6a43c3" target="_blank" rel="noopener">Spotify <i class="fa-solid fa-arrow-up-right arrow"></i></a>
+      <a href="https://music.apple.com/us/playlist/seth-earnest-mixing-discog/pl.u-ZmblVXJiR97eJ" target="_blank" rel="noopener">Apple Music <i class="fa-solid fa-arrow-up-right arrow"></i></a>
+      <a href="https://tidal.com/playlist/8fd9a9f3-d87f-4363-aac8-f41829d6cebc" target="_blank" rel="noopener">Tidal <i class="fa-solid fa-arrow-up-right arrow"></i></a>
     </div>
+  </section>
 
-    <section class="s1">
-      <h2 class="section-tag">listen</h2>
-      <div class="listen-links">
-        <a href="https://open.spotify.com/playlist/0Wk9LYnX9WPAHEaLfjW1xq?si=871a38803c6a43c3" target="_blank" rel="noopener">Spotify <span class="arrow" aria-hidden="true">↗</span></a>
-        <a href="https://music.apple.com/us/playlist/seth-earnest-mixing-discog/pl.u-ZmblVXJiR97eJ" target="_blank" rel="noopener">Apple Music <span class="arrow" aria-hidden="true">↗</span></a>
-        <a href="https://tidal.com/playlist/8fd9a9f3-d87f-4363-aac8-f41829d6cebc" target="_blank" rel="noopener">Tidal <span class="arrow" aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-
-    <section class="s2">
-      <h2 class="section-tag">about</h2>
-      <!-- Add width="" and height="" matching photo.jpg's real pixel dimensions to prevent layout shift -->
-      <img class="portrait" src="photo.jpg" alt="Portrait of Seth Earnest" decoding="async" />
-      <div class="about-body">
-        <p>Mix engineer. Producer. Composer. Musician.</p>
-        <p>Almost a billion streams. Years on the road and in studios as a musician. Feature films, TV, and game studios. I've been in most rooms this industry has, and it's made me a better collaborator at the mix stage.</p>
-        <p class="clients">Artists, labels &amp; companies I've worked with include Tessa Violet, Walker Hayes, Cobra Starship, Canaan Smith, Matt Stell, Sony, Disney, Google, Fueled By Ramen, Broken Bow Records, New West Records, TAG, and dozens of others.</p>
-        <p class="personal">Married to Christina. Have a dog named Indie. I roast my own coffee and watch a lot of 80s movies.</p>
-      </div>
-    </section>
-
-    <hr class="divider" />
-
-    <div class="hero">
-      <h2>I'd love to hear about your next project.</h2>
+  <section class="s2">
+    <div class="section-tag">about</div>
+    <img src="photo.jpg" alt="seth earnest" style="width:100%;max-width:280px;display:block;margin-bottom:32px;filter:grayscale(20%);" />
+    <div class="about-body">
+      <p>Mix engineer. Producer. Composer. Musician.</p>
+      <p>Almost a billion streams. Years on the road and in studios as a musician. Feature films, TV, and game studios. I've been in most rooms this industry has, and it's made me a better collaborator at the mix stage.</p>
+      <p class="clients">Artists, labels & companies I've worked with include Tessa Violet, Walker Hayes, Cobra Starship, Canaan Smith, Matt Stell, Sony, Disney, Google, Fueled By Ramen, Broken Bow Records, New West Records, TAG, and dozens of others.</p>
+      <p class="personal">Married to Christina. Have a dog named Indie. I roast my own coffee and watch a lot of 80s movies.</p>
     </div>
+  </section>
 
-    <section class="s3">
-      <h2 class="section-tag">Get in touch</h2>
-      <div class="contact-links">
-        <a href="mailto:earnestmix@gmail.com">earnestmix@gmail.com</a>
-        <a href="tel:+16156699007">(615) 669-9007</a>
-        <a href="https://www.instagram.com/sethearnest/" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
-        </a>
-      </div>
-    </section>
+  <hr style="border:none;border-top:1px solid var(--rule);margin:0;">
 
-  </main>
+  <div class="hero">
+    <h1>I'd love to hear about your next project.</h1>
+  </div>
+  
+  <section class="s3">
+    <div class="section-tag">Get in touch</div>
+    <div class="contact-links">
+      <a href="mailto:earnestmix@gmail.com">earnestmix@gmail.com</a>
+      <a href="tel:+16156699007">(615) 669-9007</a>
+      <a href="https://www.instagram.com/sethearnest/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" style="font-size:2rem;"></i></a>
+    </div>
+  </section>
 
   <footer>
     <span>© 2026 SETH EARNEST</span>
